@@ -33,6 +33,7 @@ import static org.wso2.is.data.sync.system.database.SQLQueryProvider.SQL_TEMPLAT
 import static org.wso2.is.data.sync.system.database.SQLQueryProvider.SQL_TEMPLATE_DROP_TABLE_MYSQL;
 import static org.wso2.is.data.sync.system.database.SQLQueryProvider.SQL_TEMPLATE_DROP_TRIGGER_POSTGRES;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_NAME_ACTION;
+import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_BYTEA;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_INT;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_INT4;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_INT8;
@@ -141,6 +142,7 @@ public class PostgreSQLDatabaseDialect extends ANSIDatabaseDialect {
 
         if (COLUMN_TYPE_TIMESTAMP_WITHOUT_TIME_ZONE.equalsIgnoreCase(columnEntry.getType()) ||
                 COLUMN_TYPE_SERIAL.equalsIgnoreCase(columnEntry.getType()) ||
+                COLUMN_TYPE_BYTEA.equalsIgnoreCase(columnEntry.getType()) ||
                 COLUMN_TYPE_INT.equalsIgnoreCase(columnEntry.getType()) ||
                 COLUMN_TYPE_INT4.equalsIgnoreCase(columnEntry.getType()) ||
                 COLUMN_TYPE_INT8.equalsIgnoreCase(columnEntry.getType())) {

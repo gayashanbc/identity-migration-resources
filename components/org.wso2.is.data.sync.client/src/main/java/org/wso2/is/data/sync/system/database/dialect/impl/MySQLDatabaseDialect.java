@@ -33,6 +33,7 @@ import static org.wso2.is.data.sync.system.database.SQLQueryProvider.SQL_TEMPLAT
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_ATTRIBUTE_AUTO_INCREMENT;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_NAME_ACTION;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_BIGINT;
+import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_BLOB;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_INT;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TYPE_TIMESTAMP;
 import static org.wso2.is.data.sync.system.util.Constant.SYNC_OPERATION_DELETE;
@@ -131,7 +132,8 @@ public class MySQLDatabaseDialect extends ANSIDatabaseDialect {
 
         String columnEntryString;
         if (COLUMN_TYPE_TIMESTAMP.equalsIgnoreCase(columnEntry.getType()) ||
-            COLUMN_TYPE_INT.equalsIgnoreCase(columnEntry.getType()) ||
+                COLUMN_TYPE_BLOB.equalsIgnoreCase(columnEntry.getType()) ||
+                COLUMN_TYPE_INT.equalsIgnoreCase(columnEntry.getType()) ||
             COLUMN_TYPE_BIGINT.equalsIgnoreCase(columnEntry.getType())) {
 
             // Let the database assign default sizes for the filtered column.

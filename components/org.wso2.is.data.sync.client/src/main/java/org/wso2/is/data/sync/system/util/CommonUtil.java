@@ -24,7 +24,10 @@ import org.wso2.is.data.sync.system.exception.SyncClientException;
 import org.wso2.is.data.sync.system.pipeline.EntryField;
 import org.wso2.is.data.sync.system.pipeline.JournalEntry;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;

@@ -28,6 +28,7 @@ import org.wso2.is.data.sync.system.pipeline.transform.DataTransformer;
 import org.wso2.is.data.sync.system.pipeline.transform.DataTransformerFactory;
 import org.wso2.is.data.sync.system.pipeline.transform.v550.AuthorizationCodeDataTransformerV550;
 import org.wso2.is.data.sync.system.pipeline.transform.v550.OAuthTokenDataTransformerV550;
+import org.wso2.is.data.sync.system.pipeline.transform.v560.SessionStoreDataTransformerV560;
 import org.wso2.is.data.sync.system.pipeline.transform.v570.AuthorizationCodeDataTransformerV570;
 import org.wso2.is.data.sync.system.pipeline.transform.v570.OAuthTokenDataTransformerV570;
 import org.wso2.is.data.sync.system.pipeline.transform.v580.AuthorizationCodeDataTransformerV580;
@@ -98,6 +99,7 @@ public class SyncService {
         dataTransformers.add(new AuthorizationCodeDataTransformerV550());
         dataTransformers.add(new AuthorizationCodeDataTransformerV570());
         dataTransformers.add(new AuthorizationCodeDataTransformerV580());
+        dataTransformers.add(new SessionStoreDataTransformerV560());
     }
 
     public void generateScripts(boolean ddlOnly) throws SyncClientException {

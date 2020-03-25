@@ -27,6 +27,7 @@ import org.wso2.is.data.sync.system.pipeline.EntryField;
 import org.wso2.is.data.sync.system.pipeline.JournalEntry;
 import org.wso2.is.data.sync.system.pipeline.PipelineContext;
 import org.wso2.is.data.sync.system.pipeline.transform.model.AuthorizationCodeInfo;
+import org.wso2.is.data.sync.system.pipeline.transform.model.SessionInfo;
 import org.wso2.is.data.sync.system.pipeline.transform.model.TokenInfo;
 
 import java.sql.Connection;
@@ -42,9 +43,11 @@ import static org.wso2.is.data.sync.system.util.Constant.COLUMN_ACCESS_TOKEN;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_ACCESS_TOKEN_HASH;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_AUTHORIZATION_CODE;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_AUTHORIZATION_CODE_HASH;
+import static org.wso2.is.data.sync.system.util.Constant.COLUMN_EXPIRY_TIME;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_IDP_ID;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_REFRESH_TOKEN;
 import static org.wso2.is.data.sync.system.util.Constant.COLUMN_REFRESH_TOKEN_HASH;
+import static org.wso2.is.data.sync.system.util.Constant.COLUMN_TIME_CREATED;
 
 public class OAuth2Util {
 
@@ -268,6 +271,20 @@ public class OAuth2Util {
                 .getAuthorizationCodeHash()));
         entry.addEntryField(isLowerCaseIdentifiers ? COLUMN_IDP_ID.toLowerCase() : COLUMN_IDP_ID,
                 new EntryField<>(authorizationCodeInfo.getIdpId()));
+    }
+
+    /**
+     * Update a value of a session journal entry.
+     *
+     * @param entry                  Journal entry.
+     * @param sessionInfo            Session information.
+     * @param isLowerCaseIdentifiers Whether the database dialect mains identifiers in lower case.
+     */
+    public static void updateJournalEntryForSession(JournalEntry entry, SessionInfo sessionInfo,
+                                                    boolean isLowerCaseIdentifiers) {
+
+        entry.addEntryField(isLowerCaseIdentifiers ? COLUMN_EXPIRY_TIME.toLowerCase()
+                : COLUMN_EXPIRY_TIME, new EntryField<>(sessionInfo.getExpiryTime()));
     }
 
     /**

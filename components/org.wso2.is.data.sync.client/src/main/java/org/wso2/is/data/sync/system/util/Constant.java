@@ -58,6 +58,7 @@ public class Constant {
     public static final String COLUMN_TYPE_INT8 = "INT8";
     public static final String COLUMN_TYPE_BIGINT = "BIGINT";
     public static final String COLUMN_TYPE_SERIAL = "SERIAL";
+    public static final String COLUMN_TYPE_BYTEA = "BYTEA";
     public static final String COLUMN_ATTRIBUTE_AUTO_INCREMENT = "AUTO_INCREMENT";
     public static final String COLUMN_NAME_SYNC_ID = "SYNC_ID";
     public static final String COLUMN_NAME_ACTION = "ACTION";
@@ -88,6 +89,13 @@ public class Constant {
     public static final String COLUMN_AUTHORIZATION_CODE_HASH = "AUTHORIZATION_CODE_HASH";
     public static final String COLUMN_USER_DOMAIN = "USER_DOMAIN";
     public static final String COLUMN_IDP_ID = "IDP_ID";
+
+    public static final String COLUMN_TIME_CREATED = "TIME_CREATED";
+    public static final String COLUMN_EXPIRY_TIME = "EXPIRY_TIME";
+    public static final String COLUMN_OPERATION = "OPERATION";
+    public static final String COLUMN_SESSION_OBJECT = "SESSION_OBJECT";
+    public static final String COLUMN_SESSION_TYPE = "SESSION_TYPE";
+    public static final String COLUMN_TENANT_ID = "TENANT_ID";
 
     public static final String TABLE_IDN_OAUTH2_AUTHORIZATION_CODE = "IDN_OAUTH2_AUTHORIZATION_CODE";
     public static final String TABLE_IDN_OAUTH2_ACCESS_TOKEN = "IDN_OAUTH2_ACCESS_TOKEN";
@@ -123,4 +131,6 @@ public class Constant {
     public static final String POSTGRESQL_PRODUCT_NAME = "PostgreSQL";
     public static final String FOREIGN_KEY_VIOLATION_ERROR_CODE_POSTGRESQL = "23503";
     public static final String FEDERATED = "FEDERATED";
+    public static final String DELETE_OPERATION = "DELETE";
+    public static final String CACHE_MANAGER_NAME = "IdentityApplicationManagementCacheManager";
 }
